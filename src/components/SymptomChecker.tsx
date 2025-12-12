@@ -57,7 +57,7 @@ export function SymptomChecker() {
   return (
     <Card className="w-full max-w-2xl mx-auto bg-card/80 backdrop-blur-sm">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-red-700/80 text-2xl md:text-3xl">
+        <CardTitle className="flex items-center gap-2 text-red-700/80 text-xl sm:text-2xl md:text-3xl">
           <HeartPulse />
           Hii ! I'm Here
         </CardTitle>
@@ -69,11 +69,11 @@ export function SymptomChecker() {
               placeholder="Enter all your symptoms clearly (e.g., fever, headache, vomiting, body pain)"
               value={symptoms}
               onChange={(e) => setSymptoms(e.target.value)}
-              rows={8}
+              rows={6}
               disabled={loading}
-              className="text-base md:text-lg"
+              className="text-base"
             />
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <Button type="submit" disabled={loading} className="flex-grow bg-accent text-black hover:bg-accent/90">
                 {loading ? <Loader className="animate-spin" /> : 'Analyze Symptoms'}
               </Button>

@@ -8,18 +8,18 @@ const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
 export function HeroSection({ children }: { children?: React.ReactNode }) {
   return (
     <>
-    <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section id="home" className="relative pt-32 pb-16 md:pt-48 md:pb-32 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-0 items-start">
-          <div className="relative z-10 text-center lg:text-left -mr-16">
-             <div className="max-h-[700px] overflow-y-auto pr-4">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <div className="relative z-10 text-center lg:text-left">
+             <div className="max-h-[700px] overflow-y-auto pr-0 lg:pr-4">
                {children}
              </div>
           </div>
           <div className="relative mt-8 lg:mt-0 h-96 lg:h-auto lg:aspect-[4/3.5]">
             {heroImage && 
               <div className="absolute inset-0 flex items-center justify-center">
-                 <div className="relative w-[300px] h-[450px] sm:w-[350px] sm:h-[525px] md:w-[400px] md:h-[600px] rounded-full overflow-hidden">
+                 <div className="relative w-[280px] h-[420px] sm:w-[350px] sm:h-[525px] md:w-[400px] md:h-[600px] rounded-full overflow-hidden">
                     <Image
                       src={heroImage.imageUrl}
                       alt={heroImage.description}

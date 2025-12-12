@@ -11,7 +11,7 @@ export function ContactSection() {
           <p className="text-base md:text-lg text-secondary-foreground mb-12">
             Have questions or need support? Feel free to reach out to us. We're here to help you on your health journey.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12">
             <div className="flex items-center gap-4">
               <Phone className="w-8 h-8 text-primary" />
               <div>

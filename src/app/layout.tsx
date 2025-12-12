@@ -17,7 +17,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: 'Healthify Me',
+  title: 'Modern Wave Therapy',
   description: 'Life Doesn\'t Have To Be A Constant Balancing Act.',
 };
 
