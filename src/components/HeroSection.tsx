@@ -1,0 +1,47 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+
+const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
+
+export function HeroSection({ children }: { children?: React.ReactNode }) {
+  return (
+    <>
+    <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-0 items-start">
+          <div className="relative z-10 text-center lg:text-left -mr-16">
+             <div className="max-h-[700px] overflow-y-auto pr-4">
+               {children}
+             </div>
+          </div>
+          <div className="relative mt-8 lg:mt-0 h-96 lg:h-auto lg:aspect-[4/3.5]">
+            {heroImage && 
+              <div className="absolute inset-0 flex items-center justify-center">
+                 <div className="relative w-[300px] h-[450px] sm:w-[350px] sm:h-[525px] md:w-[400px] md:h-[600px] rounded-full overflow-hidden">
+                    <Image
+                      src={heroImage.imageUrl}
+                      alt={heroImage.description}
+                      fill
+                      className="object-cover"
+                      priority
+                      data-ai-hint={heroImage.imageHint}
+                    />
+                 </div>
+              </div>
+            }
+             <div className="absolute bottom-0 right-0 sm:right-10 w-32 h-32 md:w-40 md:h-40">
+                <svg width="100%" height="100%" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M168 168V0C75.2284 0 0 75.2284 0 168H168Z" fill="#D9A443" fillOpacity="0.6"/>
+                    <path d="M140 168V56C103.732 56 74 85.732 74 122V168H140Z" stroke="#297272" strokeWidth="2"/>
+                    <path d="M112 168V94C99.2975 94 89 104.297 89 117V168H112Z" stroke="#297272" strokeWidth="2"/>
+                </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </>
+  );
+}
